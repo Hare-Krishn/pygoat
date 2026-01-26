@@ -17,6 +17,36 @@ Without effective alerting, attacks may succeed silently and persist for long pe
 
 > ⚠️ Currently, this is the only lab under A09 and intentionally demonstrates a failure case.
 
+
+## Starting A09
+
+From the a09 directory, start the application using Docker Compose:
+```
+docker compose up --build
+```
+
+The application will start in the foreground.
+
+---
+
+
+## Accessing A09
+
+Once the containers are running, access a09 at:
+```
+http://localhost:5000
+```
+
+---
+
+## Stopping 
+
+To stop and shut down containers, press:
+
+```
+Ctrl + C
+```
+
 ## Learning Objectives
 - Understand why logging without alerting is insufficient
 - Identify security-relevant events that must be logged
