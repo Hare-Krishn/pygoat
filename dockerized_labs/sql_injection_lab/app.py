@@ -13,12 +13,14 @@ def init_db():
         conn = sqlite3.connect("database.db")
         c = conn.cursor()
         # Create users table
-        c.execute("""
+        c.execute(
+            """
             CREATE TABLE IF NOT EXISTS users (
                 username TEXT PRIMARY KEY,
                 password TEXT NOT NULL
             )
-        """)
+        """
+        )
         # Insert admin user
         c.execute(
             "INSERT OR REPLACE INTO users (username, password) VALUES (?, ?)",
