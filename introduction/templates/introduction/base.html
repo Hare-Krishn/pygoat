@@ -761,13 +761,11 @@
 
     		const STORAGE_KEY = "pygoat_sidebar_state_v1";
 
-    		// Default state structure
     		const defaultState = {
         		collapsed: false,
         		dropdowns: {}
     		};
 
-    		// Safely get state
     		function getState() {
         		try {
             			const stored = localStorage.getItem(STORAGE_KEY);
@@ -777,12 +775,10 @@
         		}
     		}
 
-    		// Save state
     		function saveState(state) {
         		localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
     		}
 
-    		// 1️⃣ Restore state on load
     		let state = getState();
 
     		if (state.collapsed) {
@@ -797,7 +793,6 @@
         		}
     		});
 
-    		// 2️⃣ Sidebar toggle handler
     		$(".sidebar-header, .pg").on("click", function () {
         		$("#sidebar").toggleClass("active");
         		$(".pg").toggleClass("active");
@@ -806,7 +801,6 @@
         		saveState(state);
     		});
 
-    		// 3️⃣ Dropdown state tracking
     		$("#sidebar .collapse").on("shown.bs.collapse hidden.bs.collapse", function () {
 
 
